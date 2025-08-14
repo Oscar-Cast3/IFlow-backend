@@ -1,0 +1,7 @@
+package com.oscar.iflow.services;
+
+import com.oscar.iflow.model.Category;
+
+public interface CategoryService {
+    Category createCategory(Category category);
+}
