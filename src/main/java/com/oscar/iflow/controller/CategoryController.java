@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 @RequestMapping("/api")
@@ -38,6 +40,12 @@ public class CategoryController {
     public ResponseEntity<?> getAllCategories() {
         Map<Long,Category> storage = service.getAllCategories();
         return new ResponseEntity<>(storage, HttpStatus.OK);
+    }
+
+    @PutMapping("/categories/{id}")
+    public ResponseEntity<?> updateCategory(@PathVariable Long id, @RequestBody Category category) {
+        Category updatedCategory = service.updateCategory(category, id);
+        return new ResponseEntity<>(updatedCategory, HttpStatus.OK);
     }
     
     @DeleteMapping("/categories/{id}")
