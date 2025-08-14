@@ -8,4 +8,5 @@ public interface CategoryService {
     Category createCategory(Category category);
     Category getCategoryById(Long id);
     Map<Long, Category> getAllCategories();
+    Category deleteCategory(Long id);
 }
