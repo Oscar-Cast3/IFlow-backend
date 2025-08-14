@@ -28,6 +28,12 @@ public class CategoryServiceImp implements CategoryService{
     }
 
     @Override
+    public Category updateCategory(Category category, Long id){
+        storage.replace(id, category);
+        return storage.get(id);
+    }
+
+    @Override
     public Category deleteCategory(Long id) {
         Category category = storage.get(id);
         storage.remove(id);
