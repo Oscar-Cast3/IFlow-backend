@@ -16,4 +16,9 @@ public class CategoryServiceImp implements CategoryService{
         return category;
     }
 
+    @Override
+    public Category getCategoryById(Long id) {
+        return storage.get(id);
+    }
+
 }

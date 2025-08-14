@@ -4,4 +4,5 @@ import com.oscar.iflow.model.Category;
 
 public interface CategoryService {
     Category createCategory(Category category);
+    Category getCategoryById(Long id);
 }
